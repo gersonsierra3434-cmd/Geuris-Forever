@@ -1,0 +1,190 @@
+<!doctype html>
+<!-- documento que identifica la pagina , no lo modifique nadie  -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NovaTech</title>
+
+<style>
+<!-- estilo principal -->
+:root{
+  --bg:#f6f7f8; --card:#fff; --muted:#9aa0a6;
+  --accent:#000000; --primary:#111827;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--primary)}
+a{text-decoration:none;color:inherit}
+header{background:var(--card);border-bottom:1px solid #e6e9ee;position:sticky;top:0}
+.container{max-width:1100px;margin:auto;padding:16px}
+.topbar{display:flex;justify-content:space-between;align-items:center}
+nav{display:flex;gap:12px}
+nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--accent)}
+nav a:hover{background:#f0f1f3}
+section{display:none;padding:60px 0;min-height:100vh}
+section.active{display:block}
+.hero{min-height:100vh;background:url('img/drag.webp') center center / cover no-repeat;border-radius:0;padding:0}
+.hero img{width:110px;height:110px;border-radius:16px;margin-bottom:18px;object-fit:cover;border:2px solid rgba(255,255,255,.25)}
+.hero h1{font-size:48px;margin:0}
+.hero p{font-size:18px;opacity:.9}
+.grid{display:grid;gap:20px}
+.cols-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.cols-7{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.card{background:var(--card);border-radius:14px;border:1px solid #eceff2;overflow:hidden}
+.card img{width:100%;height:160px;object-fit:cover}
+.card-body{padding:14px}
+.card-body h3{margin:0 0 6px 0;font-size:16px}
+.lead{color:var(--muted);font-size:14px}
+footer{background:var(--card);border-top:1px solid #e6e9ee;padding:24px;margin-top:40px}
+
+/* ESTILOS PARA LA SECCIÓN DEL EQUIPO */
+.team-card{text-align:center}
+.team-card img{width:100px;height:100px;border-radius:50%;object-fit:cover;margin:0 auto 10px;border:3px solid #007bff}
+.team-card h3{margin:0 0 4px 0;font-size:15px}
+.team-card p{font-size:12px;color:#666;margin:0}
+.about-content{margin-bottom:30px;font-size:16px;line-height:1.6;color:#444}
+</style>
+</head>
+<body>
+<!-- logo de mi pagin -->
+<header>
+  <div class="container topbar">
+    <div style="display:flex;align-items:center;gap:10px"><img src="img/acord.jpg" alt="NovaTech" style="width:36px;height:36px;object-fit:contain"><strong>NovaTech</strong></div>
+    <nav>
+      <a href="#" onclick="mostrar('inicio')">Inicio</a>
+      <a href="#" onclick="mostrar('productos')">Productos</a>
+      <a href="#" onclick="mostrar('proyectos')">Proyectos</a>
+      <a href="#" onclick="mostrar('contacto')">Contacto</a>
+    </nav>
+  </div>
+</header>
+<!-- container es el contenido que tiene la pagina al icniio////// -->
+<main class="container">
+<!-- inicio basico y feo  de lapagina  -->
+<section id="inicio" class="active" style="padding:0;min-height:100vh">
+  <div class="hero"></div>
+
+  <!-- SECCIÓN SOBRE NOSOTROS AGREGADA -->
+  <div class="container" style="padding:60px 16px">
+    <h2 style="text-align:center;margin-bottom:30px">Sobre Nosotros</h2>
+
+    <div class="about-content">
+      <h3 style="margin-top:0">¿Quiénes Somos?</h3>
+      <p>Somos <strong>NovaTech</strong>, un equipo de 7 profesionales apasionados por la tecnología, unidos por la visión de llevar soluciones tecnológicas innovadoras y accesibles a todos nuestros clientes.</p>
+
+      <h3>¿Qué Hacemos?</h3>
+      <p>Nos especializamos en venta de hardware, desarrollo de proyectos tecnológicos, reparación de equipos y soluciones integrales para empresas y usuarios particulares.</p>
+    </div>
+
+    <h3 style="text-align:center;margin:40px 0 20px 0">Nuestro Equipo</h3>
+
+    <div class="grid cols-7" style="gap:10px">
+      <!-- Gerson SM -->
+      <div class="card team-card">
+        <img src="img/HondaNSX.jpg" alt="Gerson SM" onerror="this.src='https://via.placeholder.com/100/007bff/ffffff?text=GS'">
+        <div class="card-body">
+          <h3>Gerson SM</h3>
+          <p>Hardware</p>
+        </div>
+      </div>
+
+      <!-- Denzel CR -->
+      <div class="card team-card">
+        <img src="img/denzel.jpg" alt="Denzel CR" onerror="this.src='https://via.placeholder.com/100/28a745/ffffff?text=DC'">
+        <div class="card-body">
+          <h3>Denzel CR</h3>
+          <p>Sistemas</p>
+        </div>
+      </div>
+
+      <!-- Adriel MM -->
+      <div class="card team-card">
+        <img src="img/adriel.jpg" alt="Adriel MM" onerror="this.src='https://via.placeholder.com/100/f39c12/ffffff?text=AM'">
+        <div class="card-body">
+          <h3>Adriel MM</h3>
+          <p>Desarrollo Web</p>
+        </div>
+      </div>
+
+      <!-- Jesus H -->
+      <div class="card team-card">
+        <img src="img/Walter_White_S5B.png" alt="Jesus H" onerror="this.src='https://via.placeholder.com/100/e74c3c/ffffff?text=JH'">
+        <div class="card-body">
+          <h3>Jesus H</h3>
+          <p>Redes</p>
+        </div>
+      </div>
+
+      <!-- Luis LP -->
+      <div class="card team-card">
+        <img src="img/lapaix.jpg" alt="Luis LP" onerror="this.src='https://via.placeholder.com/100/9b59b6/ffffff?text=LL'">
+        <div class="card-body">
+          <h3>Luis LP</h3>
+          <p>Gaming</p>
+        </div>
+      </div>
+
+      <!-- Loren L -->
+      <div class="card team-card">
+        <img src="img/Loren.jpeg" alt="Loren L" onerror="this.src='https://via.placeholder.com/100/1abc9c/ffffff?text=L'">
+        <div class="card-body">
+          <h3>Loren L</h3>
+          <p>Diseño</p>
+        </div>
+      </div>
+
+      <!-- Hancel RM -->
+      <div class="card team-card">
+        <img src="img/hancel.jpg" alt="Hancel RM" onerror="this.src='https://via.placeholder.com/100/3498db/ffffff?text=HR'">
+        <div class="card-body">
+          <h3>Hancel RM</h3>
+          <p>Soporte</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- diseno de los productos en venta y estilo basico ccs base ,  -->
+<section id="productos">
+  <h2>Productos</h2>
+  <div class="grid cols-4" style="margin-top:24px">
+    <div class="card"><img src="img/victus.webp"><div class="card-body"><h3>HP Victus Gaming</h3><p class="lead">Laptop gaming.</p></div></div>
+    <div class="card"><img src="img/ps5.png"><div class="card-body"><h3>PlayStation 5</h3><p class="lead">Consola next‑gen.</p></div></div>
+    <div class="card"><img src="img/componentes.jpg"><div class="card-body"><h3>Componentes PC</h3><p class="lead">Hardware avanzado.</p></div></div>
+    <div class="card"><img src="img/placa.webp"><div class="card-body"><h3>Motherboard</h3><p class="lead">Placa base.</p></div></div>
+    <div class="card"><img src="img/mvme.jpg"><div class="card-body"><h3>SSD NVMe</h3><p class="lead">Almacenamiento rápido.</p></div></div>
+    <div class="card"><img src="img/blood.jpg"><div class="card-body"><h3>Monitor Gaming</h3><p class="lead">Alta tasa de refresco.</p></div></div>
+    <div class="card"><img src="img/urokodaky.jpg"><div class="card-body"><h3>Teclado Mecánico</h3><p class="lead">Precisión y diseño.</p></div></div>
+    <div class="card"><img src="img/tronco.jpg"><div class="card-body"><h3>Mouse Gaming</h3><p class="lead">Control total.</p></div></div>
+  </div>
+</section>
+
+<!-- los malditos projecto , no pongs mano a eso que ta bobo hacerlo de nuevo -->
+<section id="proyectos">
+  <h2>Proyectos</h2>
+  <div class="grid cols-4" style="margin-top:24px">
+    <div class="card"><img src="img/juanbautista.jpg"><div class="card-body"><h3>PC Custom</h3><p class="lead">Armado a medida.</p></div></div>
+    <div class="card"><img src="img/word.jpg"><div class="card-body"><h3>Workstation</h3><p class="lead">Edición y render.</p></div></div>
+    <div class="card"><img src="img/combat.jpg"><div class="card-body"><h3>Setup Gaming</h3><p class="lead">Diseño completo.</p></div></div>
+    <div class="card"><img src="img/server.webp"><div class="card-body"><h3>Servidor Local</h3><p class="lead">Red y datos.</p></div></div>
+    <div class="card"><img src="img/combat.jpg"><div class="card-body"><h3>Web Tech</h3><p class="lead">Página tecnológica.</p></div></div>
+    <div class="card"><img src="img/bmw.jpg"><div class="card-body"><h3>PC Modding</h3><p class="lead">Personalización extrema.</p></div></div>
+  </div>
+</section>
+<!-- =============================
+     Información básica
+============================= -->
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p class="lead">Escríbenos para más información.</p>
+</section>
+</main>
+<!--Información final y derechos y zurdos -->
+<footer><div class="container"><strong>NovaTech</strong><br><span class="lead">© 2025</span></div></footer>
+<!-- control de movimientos y gestos internos ,  -->
+<script>
+function mostrar(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body>
+</html>

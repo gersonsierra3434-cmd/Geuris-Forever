@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Proyecto — NovaTech</title>
+    <meta name="description" content="Página profesional, moderna, blanca y gris. Editable 100%.">
+
+    <style>
+        /* ---------- Palette & base ---------- */
+        :root{
+            --bg:#f6f7f8; --card:#ffffff; --muted:#111827; --accent:#111827; --primary:#111827;
+            --glass: rgba(255,255,255,0.7);
+        }
+        *{box-sizing:border-box}
+        body{margin:0;font-family:Inter, system-ui, -apple-system, Arial, sans-serif;background:var(--bg);color:var(--primary);-webkit-font-smoothing:antialiased}
+        a{color:inherit;text-decoration:none}
+
+        /* ---------- Header & nav ---------- */
+        header{background:var(--card);border-bottom:1px solid #e6e9ee;position:sticky;top:0;z-index:60}
+        .container{max-width:1100px;margin:0 auto;padding:16px}
+        .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo-img{width:48px;height:48px;border-radius:8px;object-fit:contain}
+        .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#f3f4f6,#e5e7eb);display:flex;align-items:center;justify-content:center;font-weight:700}
+        nav{display:flex;gap:12px;align-items:center}
+        nav a{padding:10px 12px;border-radius:8px;font-weight:600;color:var(--accent)}
+        nav a:hover{background:#f0f1f3}
+
+        /* hamburger */
+        .hamburger{display:none;border:0;background:none;font-size:22px}
+
+        /* ---------- Hero / Carousel ---------- */
+        .hero{padding:28px 0;background:transparent}
+        .carousel{position:relative;border-radius:12px;overflow:hidden;background:var(--card);box-shadow:0 6px 20px rgba(17,24,39,0.06)}
+        .slides{display:flex;transition:transform .6s ease}
+        .slide{min-width:100%;display:flex;align-items:center;gap:24px;padding:36px}
+        .slide img{width:48%;border-radius:10px;border:1px solid #e6e9ee}
+        .slide .copy{width:48%}
+        .carousel .controls{position:absolute;left:12px;right:12px;bottom:12px;display:flex;justify-content:space-between;align-items:center}
+        .dots{display:flex;gap:8px}
+        .dot{width:10px;height:10px;border-radius:999px;background:#d1d5db;cursor:pointer}
+        .dot.active{background:var(--accent)}
+        .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700;background:linear-gradient(90deg,#111827,#374151);color:#fff}
+
+        /* ---------- Sections ---------- */
+        section{padding:44px 0}
+        h2{margin:0 0 12px 0;font-size:22px}
+        p.lead{color:var(--muted);margin:0 0 18px 0}
+        .grid{display:grid;gap:18px}
+        .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+        .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid #eceff2}
+
+        /* Services */
+        .services .card{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+
+        /* Projects */
+        .projects .thumb{height:160px;background:#eef2f5;border-radius:8px;display:flex;align-items:center;justify-content:center}
+
+        /* Team */
+        .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+        .member{display:flex;gap:12px;align-items:center}
+        .member img{width:84px;height:84px;border-radius:12px;object-fit:cover}
+
+        /* Counters */
+        .counters{display:flex;gap:12px;align-items:center}
+        .counter{background:var(--card);padding:18px;border-radius:12px;text-align:center;min-width:120px;border:1px solid #eceff2}
+        .counter .num{font-size:22px;font-weight:800}
+        .muted{color:var(--muted);font-weight:600}
+
+        /* Buttons animated */
+        .btn-anim{padding:10px 16px;border-radius:12px;border:0;background:transparent;cursor:pointer;position:relative;overflow:hidden}
+        .btn-anim:before{content:"";position:absolute;left:0;top:0;width:0;height:100%;background:#111827;opacity:.08;transition:width .3s}
+        .btn-anim:hover:before{width:100%}
+
+        /* Footer */
+        footer{background:var(--card);border-top:1px solid #e6e9ee;padding:28px}
+        .footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+        /* Responsive */
+        @media (max-width:900px){
+            .slide{flex-direction:column}
+            .slide img,.slide .copy{width:100%}
+            nav{display:none}
+            .hamburger{display:block}
+        }
+    </style>
+</head>
+<body>
+
+   <!-- HEADER / NAV -->
+<header>
+    <div class="container topbar">
+        <div class="brand">
+            <img src="img/acord.jpg" alt="NovaTech Logo"
+                 style="width:60px;height:60px;border-radius:10px;object-fit:cover;border:1px solid #e6e9ee">
+            <div>
+                <div style="font-weight:800">NovaTech</div>
+                <div style="font-size:12px;color:var(--muted)">Innovación · Tecnología · Soluciones</div>
+            </div>
+        </div>
+
+        <nav id="mainNav">
+            <a href="#home">Inicio</a>
+            <a href="#quienes">Quiénes somos</a>
+            <a href="#misval">Misión/Visión/Valores</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#equipo">Equipo</a>
+            <a href="#contacto">Contáctanos</a>
+        </nav>
+
+        <button class="hamburger" id="openMenu">☰</button>
+    </div>
+</header>
+
+            <button class="hamburger" id="openMenu">☰</button>
+        </div>
+    </header>
+
+    <!-- HERO + CARRUSEL -->
+    <main class="container" id="home">
+        <section class="hero">
+            <div class="carousel" id="carousel">
+                <div class="slides" id="slides">
+                    <div class="slide">
+                        <div class="copy">
+                            <h2>Innovación tecnológica a tu alcance</h2>
+                            <p class="lead">Desarrollo, personalización y prototipos — todo con estilo minimal y funcional. Cambia las imágenes en la carpeta <code>img/</code>.</p>
+                            <div style="display:flex;gap:10px;margin-top:12px">
+                                <a class="btn" href="#proyectos">Ver proyectos</a>
+                                <button class="btn-anim" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Contáctanos</button>
+                            </div>
+                        </div>
+                        <img src="img/cpu.jpg" alt="Portada - proyecto">
+                    </div>
+
+                    <div class="slide">
+                        <div class="copy">
+                            <h2>Soluciones digitales personalizadas</h2>
+                            <p class="lead">Software, hardware y sistemas integrados: mostramos tu trabajo con tarjetas y galerías.</p>
+                            <div style="display:flex;gap:10px;margin-top:12px">
+                                <a class="btn" href="#servicios">Nuestros servicios</a>
+                                <a class="btn-anim" href="#equipo">Conoce al equipo</a>
+                            </div>
+                        </div>
+                        <img src="img/ps5.png" alt="Personalización">
+                    </div>
+
+                    <div class="slide">
+                        <div class="copy">
+                            <h2>Proyectos en desarrollo</h2>
+                            <p class="lead">Seguimiento de proyectos con descripción breve y enlaces externos.</p>
+                            <div style="display:flex;gap:10px;margin-top:12px">
+                                <a class="btn" href="#proyectos">Ver más</a>
+                            </div>
+                        </div>
+                        <img src="img/Nateg.jpg" alt="Proyectos">
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="dots" id="dots"></div>
+                    <div style="display:flex;gap:8px">
+                        <button class="btn-anim" id="prev">◀</button>
+                        <button class="btn-anim" id="next">▶</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIÉNES SOMOS -->
+        <section id="quienes">
+            <div class="grid">
+                <div class="card">
+                    <h2>Quiénes somos</h2>
+                    <p class="lead">Somos un equipo apasionado por la tecnología, innovación y diseño. Combinamos creatividad y técnica para entregar soluciones digitales reales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISIÓN / VISIÓN / VALORES -->
+        <section id="misval">
+            <div class="grid cols-3">
+                <div class="card">
+                    <h2>Misión</h2>
+                    <p class="lead">Brindar servicios tecnológicos y soluciones digitales con calidad profesional y atención al detalle.</p>
+                </div>
+                <div class="card">
+                    <h2>Visión</h2>
+                    <p class="lead">Ser referentes en innovación tecnológica y desarrollo de soluciones digitales aplicadas.</p>
+                </div>
+                <div class="card">
+                    <h2>Valores</h2>
+                    <p class="lead">Innovación, transparencia, precisión y pasión por la tecnología bien aplicada.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="services">
+            <h2>Servicios ofrecidos</h2>
+            <div class="grid cols-3" style="margin-top:12px">
+                <div class="card">
+                    <h3>Desarrollo de Software</h3>
+                    <p class="lead">Aplicaciones web, móviles y sistemas a medida.</p>
+                </div>
+                <div class="card">
+                    <h3>Consultoría Tecnológica</h3>
+                    <p class="lead">Análisis, implementación y optimización de sistemas.</p>
+                </div>
+                <div class="card">
+                    <h3>Prototipos Electrónicos</h3>
+                    <p class="lead">Sistemas embebidos, IoT y hardware personalizado.</p>
+                </div>
+            </div>
+        </section>
+
+      <!-- PROYECTOS / PRODUCTOS -->
+<section id="proyectos" class="projects">
+    <h2>Proyectos / Productos</h2>
+    <div class="grid cols-3" style="margin-top:12px">
+        <!-- PROYECTO 1 -->
+        <div class="card">
+            <div class="thumb">
+                <img src="img/victus.webp" alt="HP Victus Gaming" style="width:100%;height:100%;object-fit:cover;border-radius:8px">
+            </div>
+            <h3>Laptop HP Victus Gaming</h3>
+            <p class="muted">Laptop gaming de alto rendimiento con RTX 3050, ideal para gamers y creadores de contenido.</p>
+            <a href="#" style="color:#4b5563;font-weight:600;font-size:14px">Ver detalles →</a>
+        </div>
+
+        <!-- PROYECTO 2 -->
+        <div class="card">
+            <div class="thumb">
+                <img src="img/componentes.jpg" alt="Componentes PC Gamer" style="width:100%;height:100%;object-fit:cover;border-radius:8px">
+            </div>
+            <h3>Componentes Gamers Completos</h3>
+            <p class="muted">Kit completo para armar tu PC gaming: tarjeta gráfica, procesador, RAM RGB y refrigeración líquida.</p>
+            <a href="#" style="color:#4b5563;font-weight:600;font-size:14px">Configurar PC →</a>
+        </div>
+
+        <!-- PROYECTO 3 -->
+        <div class="card">
+            <div class="thumb">
+                <img src="img/placa.webp" alt="Placa madre gamer" style="width:100%;height:100%;object-fit:cover;border-radius:8px">
+            </div>
+            <h3>Motherboard ASUS TUF Gaming B650M-PLUS WiFi</h3>
+            <p class="muted">Placa base mATX para AM5 con WiFi 6, doble M.2 y VRM robusto en diseño militar duradero.</p>
+            <a href="#" style="color:#4b5563;font-weight:600;font-size:14px">Comprar ahora →</a>
+        </div>
+    </div>
+</section>
+
+       <!-- EQUIPO -->
+<section id="equipo">
+    <h2>Nuestro Equipo</h2>
+    <div class="team">
+        <!-- MIEMBRO 1 -->
+        <div class="member">
+            <div class="member-img">
+                <img src="img/portada.jpg" alt="Ger - Líder de Proyecto">
+            </div>
+            <div class="member-info">
+                <h4>Ger</h4>
+                <p class="muted">Líder de Proyecto</p>
+            </div>
+        </div>
+
+        <!-- MIEMBRO 2 -->
+        <div class="member">
+            <div class="member-img">
+                <img src="img/lapaix.jpg" alt="Luis - Diseñador Creativo">
+            </div>
+            <div class="member-info">
+                <h4>Luis L</h4>
+                <p class="muted">Diseñador Creativo</p>
+            </div>
+        </div>
+
+        <!-- MIEMBRO 3 -->
+        <div class="member">
+            <div class="member-img">
+                <img src="img/Loren.JPEG" alt="Loren - Gestora de Proyectos">
+            </div>
+            <div class="member-info">
+                <h4>Loren E</h4>
+                <p class="muted">Gestora de Proyectos</p>
+            </div>
+        </div>
+
+        <!-- MIEMBRO 4 -->
+        <div class="member">
+            <div class="member-img">
+                <img src="img/denzel.jpg" alt="Denzel - Desarrollador Web">
+            </div>
+            <div class="member-info">
+                <h4>Denzel C</h4>
+                <p class="muted">Desarrollador Web</p>
+            </div>
+        </div>
+
+        <!-- MIEMBRO 5 -->
+        <div class="member">
+            <div class="member-img">
+                <img src="img/hancel.jpg" alt="Hancel - Comunicaciones">
+            </div>
+            <div class="member-info">
+                <h4>Hancel</h4>
+                <p class="muted">Comunicaciones</p>
+            </div>
+        </div>
+
+        <!-- MIEMBRO 6 -->
+        <div class="member">
+            <div class="member-img">
+                <img src="img/Walter_White_S5B.png" alt="Jesús - Analista de Datos">
+            </div>
+            <div class="member-info">
+                <h4>Jesús</h4>
+                <p class="muted">Analista de Datos</p>
+            </div>
+        </div>
+
+        <!-- MIEMBRO 7 -->
+        <div class="member">
+            <div class="member-img">
+                <img src="img/Adriel.JPG" alt="Adriel - Marketing Digital">
+            </div>
+            <div class="member-info">
+                <h4>Adriel M</h4>
+                <p class="muted">Marketing Digital</p>
+            </div>
+        </div>
+
+        <!-- MIEMBRO 8 - JARVIS -->
+        <div class="member">
+            <div class="member-img">
+                <img src="img/Iron-man-jarvis.webp" alt="Jarvis - Asistente de IA">
+            </div>
+            <div class="member-info">
+                <h4>Jarvis</h4>
+                <p class="muted">Asistente de IA</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- FORMULARIO EXTERNO (Google Forms) -->
+        <section id="contacto">
+            <h2>Contacto / Formulario</h2>
+            <p class="lead">Rellena el formulario (Google Forms) o usa el chat en vivo.</p>
+
+            <!-- Inserta aquí el iframe de Google Forms (reemplaza la URL) -->
+            <div class="card" style="padding:0;overflow:hidden">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdd-7jz74i_L1Ed7ySBZW09oz08Cjw8V8LymeEBDocmWmu_NQ/viewform?usp=publish-editor"></iframe>
+            </div>
+        </section>
+
+        <!-- CONTADORES / METRICS -->
+        <section>
+            <h2>Métricas</h2>
+            <div class="counters" style="margin-top:12px">
+                <div class="counter">
+                    <div class="num" data-target="12500">0</div>
+                    <div class="muted">Visitas</div>
+                </div>
+                <div class="counter">
+                    <div class="num" data-target="42">0</div>
+                    <div class="muted">Proyectos</div>
+                </div>
+                <div class="counter">
+                    <div class="num" data-target="120">0</div>
+                    <div class="muted">Clientes</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WIDGETS EXTERNOS (ejemplo Twitter) -->
+        <section>
+            <h2>Widgets</h2>
+            <div class="grid cols-3" style="margin-top:12px">
+                <div class="card">
+                    <h3>Twitter</h3>
+                    <!-- Pega aquí tu widget de Twitter o Instagram -->
+                    <a href="https://twitter.com/" target="_blank" class="muted">@NovaTech</a>
+                </div>
+
+                <div class="card">
+                    <h3>Widget 2</h3>
+                    <p class="muted">Puedes integrar mapas, calendarios o reproductores.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Embed HTML obligatorio</h3>
+                    <!-- Ejemplo de embed: iframe usando srcdoc (HTML embebido dentro de la misma página) -->
+                    <iframe style="width:100%;height:120px;border:0;border-radius:8px;" srcdoc="<div style='font-family:Arial;padding:12px'>Este es un HTML embebido (srcdoc). Cambialo por tu código.</div>"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div style="font-weight:800">NovaTech</div>
+                <div class="muted">Innovación · Tecnología · Soluciones</div>
+                <div style="margin-top:8px;font-size:14px">Calle Repaldo manolo caco de guevo · Santo Domingo · RD</div>
+                <div style="margin-top:6px">Tel: +1 809 877 pal de frito · Email: info@novatech.com</div>
+            </div>
+
+            <div>
+                <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+                    <div>Redes</div>
+                    <div style="display:flex;gap:8px">
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                    <div style="font-size:12px;color:var(--muted);margin-top:12px">© <span id="year"></span> NovaTech. Todos los derechos reservados.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Simple carousel
+        (function(){
+            const slides = document.getElementById('slides');
+            const slidesCount = slides.children.length;
+            let idx = 0;
+            const dots = document.getElementById('dots');
+            for(let i=0;i<slidesCount;i++){const d=document.createElement('div');d.className='dot';d.dataset.i=i;d.addEventListener('click',()=>go(i));dots.appendChild(d)}
+            function update(){slides.style.transform=`translateX(-${idx*100}%)`;Array.from(dots.children).forEach((d,i)=>d.classList.toggle('active',i===idx))}
+            function next(){idx=(idx+1)%slidesCount;update()}
+            function prev(){idx=(idx-1+slidesCount)%slidesCount;update()}
+            document.getElementById('next').addEventListener('click',next);
+            document.getElementById('prev').addEventListener('click',prev);
+            function go(i){idx=i;update()}
+            update();
+            let auto = setInterval(next,5000);
+            document.getElementById('carousel').addEventListener('mouseenter',()=>clearInterval(auto));
+            document.getElementById('carousel').addEventListener('mouseleave',()=>auto = setInterval(next,5000));
+        })();
+
+        // Counters animation
+        (function(){
+            const nums = document.querySelectorAll('.num');
+            nums.forEach(el=>{
+                const target = +el.dataset.target || 0; let cur=0; const step=Math.ceil(target/120);
+                function run(){if(cur<target){cur+=step; if(cur>target) cur=target; el.textContent=cur.toLocaleString(); requestAnimationFrame(run);} else {el.textContent=target.toLocaleString();}}
+                run();
+            })
+        })();
+
+        // Hamburger mobile menu
+        (function(){
+            const open = document.getElementById('openMenu');
+            open.addEventListener('click',()=>{
+                const nav = document.getElementById('mainNav');
+                if(getComputedStyle(nav).display==='none'){nav.style.display='flex';nav.style.position='absolute';nav.style.right='16px';nav.style.top='68px';nav.style.background='var(--card)';nav.style.padding='12px';nav.style.flexDirection='column';nav.style.boxShadow='0 8px 30px rgba(17,24,39,0.08)'} else {nav.style.display='none'}
+            })
+        })();
+    </script>
+</body>
+</html>
